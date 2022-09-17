@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/A_T_Mehedi_Hassan/AndroidStudioProjects/PdfManager/app/src/main/res/layout/activity_dash_board.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/A_T_Mehedi_Hassan/AndroidStudioProjects/PdfManager/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/A_T_Mehedi_Hassan/AndroidStudioProjects/PdfManager/app/src/main/res/layout/activity_pdf.xml" value="0.22" />
+        <entry key="..\:/Users/A_T_Mehedi_Hassan/AndroidStudioProjects/PdfManager/app/src/main/res/layout/fragment_pdf_renderer_basic.xml" value="0.159375" />
+        <entry key="..\:/Users/A_T_Mehedi_Hassan/AndroidStudioProjects/PdfManager/app/src/main/res/menu/main.xml" value="0.159375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

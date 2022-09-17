@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PdfManager</string>
+    <string name="icon">icon</string>
+    <string name="by_at_tech">By AT-Tech</string>
+    <string name="fab">fab</string>
+    <string name="pdf">pdf</string>
+    <string name="intro_message">Welcome</string>
+    <string name="info">information</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Pdf Manager</string>
+    <string name="open_pdf">open Pdf</string>
+</resources>
