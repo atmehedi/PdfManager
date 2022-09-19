@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.annotation.UiThread
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
@@ -36,6 +37,7 @@ class PdfActivity :  AppCompatActivity() {
 
 
         }
+       
 
       //  //private val scope = CoroutineScope(executor.asCoroutineDispatcher() + job)
 //        scope.launch {

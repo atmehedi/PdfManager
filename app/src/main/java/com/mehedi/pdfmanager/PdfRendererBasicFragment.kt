@@ -41,6 +41,9 @@ class PdfRendererBasicFragment : Fragment(R.layout.fragment_pdf_renderer_basic) 
         buttonNext.setOnClickListener { viewModel.showNext() }
 
 
+       // viewModel.recycle(view,requireContext())
+
+
     }
 
 }

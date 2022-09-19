@@ -4,25 +4,39 @@ import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
 
 class DashBoardActivity : AppCompatActivity() {
+
     private lateinit var pdfA:Button
     private var pdfUri:String? = null
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board)
 
         pdfA = findViewById(R.id.pdfA)
         pdfA.setOnClickListener {
+
+
             val intent = Intent(this,PdfActivity::class.java)
             intent.putExtra("Uri","/storage/emulated/0/Download/_OceanofPDF.com_The_Alchemist.pdf")
             startActivity(intent)
             // /sdcard/Download/_OceanofPDF.com_The_Alchemist.pdf
+
+
+
+
+
+
+
+
 
         }
         val data: Uri? = this.intent?.data

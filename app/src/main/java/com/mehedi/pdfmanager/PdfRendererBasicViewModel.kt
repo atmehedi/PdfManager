@@ -1,14 +1,11 @@
 package com.mehedi.pdfmanager
 
 import android.app.Application
-import android.content.Context
 import android.content.Intent
-import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
-import android.net.Uri
 import android.os.ParcelFileDescriptor
-import android.provider.MediaStore
+import androidx.core.graphics.createBitmap
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -25,7 +22,9 @@ class PdfRendererBasicViewModel @JvmOverloads constructor(
     application: Application,
     useInstantExecutor: Boolean = false
 ) : AndroidViewModel(application) {
-
+//
+//    private lateinit var recyclerView: RecyclerView
+//    private var pdfs = arrayListOf<Model>()
 
     private val job = Job()
     private val executor = if (useInstantExecutor) {
@@ -34,9 +33,9 @@ class PdfRendererBasicViewModel @JvmOverloads constructor(
         Executors.newSingleThreadExecutor()
 
     }
+   private var bitmap = createBitmap(1000, 1000)
     private val scope = CoroutineScope(executor.asCoroutineDispatcher() + job)
 
-    private var data:Uri? = null
     private var uri :String?= "null"
     private var fileDescriptor: ParcelFileDescriptor? = null
     private var pdfRenderer: PdfRenderer? = null
@@ -106,6 +105,17 @@ class PdfRendererBasicViewModel @JvmOverloads constructor(
 
 
     }
+//    fun recycle(view: View,context: Context){
+//        recyclerView = view.findViewById(R.id.recyclerView)
+//        recyclerView.layoutManager = LinearLayoutManager(context)
+//
+//
+//        val pdfsObject = Model(bitmap)
+//        pdfs.add(pdfsObject)
+//
+//        recyclerView.adapter = PdfRecyclerAdapter(context, pdfs)
+//
+//    }
 
     fun showNext() {
         scope.launch {
@@ -121,7 +131,7 @@ class PdfRendererBasicViewModel @JvmOverloads constructor(
 
     private fun openPdfRenderer() {
 
-        println("Uri >>$uri")
+        println("Uri model >>$uri")
         fileDescriptor = ParcelFileDescriptor
             .open(uri?.let { File(it) }
                 , ParcelFileDescriptor.MODE_READ_ONLY).also {
@@ -138,7 +148,7 @@ class PdfRendererBasicViewModel @JvmOverloads constructor(
             val page = renderer.openPage(index).also {
                 currentPage = it
             }
-            val bitmap = Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)
+            bitmap = Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)
             page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
             _pageBitmap.postValue(bitmap)
             val count = renderer.pageCount

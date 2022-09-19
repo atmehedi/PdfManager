@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 1) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 Handler(Looper.myLooper()!!).postDelayed({
                     val intent1 = Intent(this, DashBoardActivity::class.java)
                     startActivity(intent1)
